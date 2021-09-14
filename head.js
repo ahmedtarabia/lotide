@@ -1,5 +1,9 @@
 const head = function(arr){
-  return arr[0];
+  if (arr === []) {
+    return undefined
+  } else {
+    return arr[0] 
+  }
 }
 console.log(head([5,4,3]))
 
