@@ -11,6 +11,7 @@ const eqArrays = function (arr1, arr2) {
 
 // Function Implementation
 
+
 const assertArraysEqual = function(actual, expected) {
   const result = eqArrays(actual, expected)
   if (result) {
@@ -20,6 +21,28 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
+const middle = function(array) {
+  let finalArr = []
+  let odd = array[Math.floor((array.length - 1 ) / 2)] 
+  let even = array[Math.floor(array.length/2)]
+  if (array.length <= 2) {
+    return finalArr
+  } 
+  if ( array.length % 2 === 0) {
+    finalArr.push(odd, even)
+  } else {
+    finalArr.push(odd)
+  }
+  return finalArr
+}
+
 // test code
 
-assertArraysEqual([1,2,3], [1, 2, 3]); // => should PASS
+assertArraysEqual(middle([1]),[ ]);
+assertArraysEqual(middle([1, 2]),[ ]);
+
+assertArraysEqual(middle([1, 2, 3]),[2]);
+assertArraysEqual(middle([1, 2, 3, 4, 5]),[3]);
+
+assertArraysEqual(middle([1, 2, 3, 4]),[2, 3]);
+assertArraysEqual(middle([1, 2, 3, 4, 5, 6]),[3, 4]);
