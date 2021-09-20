@@ -1,3 +1,6 @@
+const eqArrays = require('./eqArrays');
+const assertArraysEqual = require('./assertArraysEqual');
+
 const letterPositions = function (sentence) {
   const results = {};
   let newSentence = sentence.split(" ").join("")
@@ -12,29 +15,6 @@ const letterPositions = function (sentence) {
   return results;
 }
 
-// Implement a function eqArrays which takes in two arrays and returns true or false, based on a perfect match.
+module.exports = letterPositions;
 
-const eqArrays = function (arr1, arr2) {
-  for( let i = 0; i < arr1.length; i++){
-    if( arr1[i] !== arr2[i]) {
-      return false
-    } 
-  }
-  return true
-}
 
-// Function Implementation
-
-const assertArraysEqual = function(actual, expected) {
-  const result = eqArrays(actual, expected)
-  if (result) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} ===  ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed:  ${actual} !==  ${expected}`);
-  }
-};
-
-// test code
-assertArraysEqual(letterPositions("hello").e, [1]);
-
-console.log(letterPositions("hello"))

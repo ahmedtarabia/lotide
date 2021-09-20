@@ -1,14 +1,4 @@
-// Implement a function eqArrays which takes in two arrays and returns true or false, based on a perfect match.
-
-const eqArrays = function (arr1, arr2) {
-  for( let i = 0; i < arr1.length; i++){
-    if( arr1[i] !== arr2[i]) {
-      return false
-    } 
-  }
-  return true
-}
-
+const eqArrays = require('./eqArrays');
 // Function Implementation
 
 const assertArraysEqual = function(actual, expected) {
@@ -20,6 +10,5 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
-// test code
 
-assertArraysEqual([1,2,3], [1, 2, 3]); // => should PASS
+module.exports = assertArraysEqual
